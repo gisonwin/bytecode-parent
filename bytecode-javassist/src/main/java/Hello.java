@@ -3,7 +3,7 @@
  * @date 2020/5/26 10:32
  */
 public class Hello {
-    public void say(){
+    public void say() {
         System.out.println("Hello.say() method print");
     }
 }

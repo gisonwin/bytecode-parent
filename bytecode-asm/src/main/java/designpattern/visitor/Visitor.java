@@ -7,6 +7,7 @@ package designpattern.visitor;
  * @see
  */
 public interface Visitor {
-        void visit(Student student);
-        void visit(Teacher teacher);
+    void visit(Student student);
+
+    void visit(Teacher teacher);
 }

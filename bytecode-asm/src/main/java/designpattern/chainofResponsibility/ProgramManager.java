@@ -7,6 +7,7 @@ package designpattern.chainofResponsibility;
  * @see
  */
 public class ProgramManager extends Handler {//项目经理
+
     @Override
     void process(Staff staff) {
         if (staff.getDays() <= 3) {

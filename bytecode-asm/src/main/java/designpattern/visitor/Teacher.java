@@ -19,6 +19,7 @@ public class Teacher implements Element {
     private String name;
     private int score;//教学评分
     private int papers;//论文数量
+
     @Override
     public void accept(Visitor visitor) {
         visitor.visit(this);

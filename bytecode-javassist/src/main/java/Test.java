@@ -7,7 +7,7 @@ import javassist.CtMethod;
  * @date 2020/5/26 10:37
  */
 public class Test {
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
         ClassPool pool = ClassPool.getDefault();
         String classPath = Thread.currentThread().getContextClassLoader().getResource(".").getFile();
         pool.insertClassPath(classPath);
@@ -15,7 +15,7 @@ public class Test {
         CtMethod cm = cc.getDeclaredMethod("say");
         cm.insertBefore("{ System.out.println(\"insert a method before\");}");
         Class<?> clazz = cc.toClass();
-        Hello hello = (Hello)clazz.newInstance();
+        Hello hello = (Hello) clazz.newInstance();
         hello.say();
     }
 }

@@ -23,10 +23,9 @@ public class GradeVisitor implements Visitor {
     @Override
     public void visit(Teacher teacher) {
         Optional.of(teacher).ifPresent(
-                tea ->{
-                    if (tea.getScore()>85) {
-                        System.out.printf("%s 's score is %d , its very excellent", tea.getName(), tea.getScore());
-
+                tea -> {
+                    if (tea.getScore() > 85) {
+                        System.out.printf("%s 's score is %d , its very excellent \n", tea.getName(), tea.getScore());
                     }
                 }
         );

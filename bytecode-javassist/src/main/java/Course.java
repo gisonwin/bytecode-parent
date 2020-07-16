@@ -21,11 +21,12 @@ public class Course {
         cc.addMethod(hello);
         cc.writeFile(target);
     }
-  //创建一个新接口,并添加接口中的方法
+
+    //创建一个新接口,并添加接口中的方法
     static void createInterfaceAndAddMethod(String interfaceParentName, String interfaceName, String target) throws Exception {
         ClassPool pool = ClassPool.getDefault();
         CtClass shape = pool.makeInterface(interfaceParentName);//创建父类接口
-        CtClass[] params = new CtClass[]{CtClass.booleanType,CtClass.longType};
+        CtClass[] params = new CtClass[]{CtClass.booleanType, CtClass.longType};
         CtMethod ctMethod = CtNewMethod.abstractMethod(pool.get("void"), "draw", params, null, shape);
 
         shape.addMethod(ctMethod);
