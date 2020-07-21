@@ -5,16 +5,13 @@ import org.objectweb.asm.MethodVisitor;
 
 import java.util.Objects;
 
-/**
- * @author <a href="mailto:gisonwin@qq.com">GisonWin</a>
- */
-public class AddSecurityCheckVisitor extends ClassVisitor {
+public class AopClassVisitor extends ClassVisitor {
 
-    public AddSecurityCheckVisitor(int api) {
+    public AopClassVisitor(int api) {
         super(api);
     }
 
-    public AddSecurityCheckVisitor(int api, ClassVisitor classVisitor) {
+    public AopClassVisitor(int api, ClassVisitor classVisitor) {
         super(api, classVisitor);
     }
 
@@ -26,14 +23,11 @@ public class AddSecurityCheckVisitor extends ClassVisitor {
             final String signature,
             final String[] exceptions) {
         MethodVisitor mv = cv.visitMethod(access, name, descriptor, signature, exceptions);
-        MethodVisitor wrappedMv = mv;
         if (!Objects.isNull(mv)) {
             if (name.equals("hello")) {
-                wrappedMv = new AddSecurityCheckMethodVisitor(mv);
+                return new AopMethodVisitor(mv);
             }
-
         }
-
-        return wrappedMv;
+        return mv;
     }
 }

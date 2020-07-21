@@ -9,13 +9,7 @@ import org.objectweb.asm.Opcodes;
 import java.io.File;
 import java.io.FileOutputStream;
 
-/**
- * @author <a href="mailto:gisonwin@qq.com">GisonWin</a>
- */
 public class Generator {
-    public static void check() {
-        System.out.println("This is Generator class 's check() invoked ...");
-    }
 
     public static void main(String[] args) throws Exception {
         //使用全限定名读取字节码源文件
@@ -24,7 +18,7 @@ public class Generator {
         //创建classWriter,并设置系统自动计算栈和本地变量
         ClassWriter writer = new ClassWriter(ClassWriter.COMPUTE_MAXS);
         //创建自定义Visitor,后续ClassReader遍历
-        ClassVisitor visitor = new AddSecurityCheckVisitor(Opcodes.ASM8, writer);
+        ClassVisitor visitor = new AopClassVisitor(Opcodes.ASM8, writer);
         //开始扫描class文件.
         reader.accept(visitor, ClassReader.SKIP_DEBUG);
         //生成全新的字节码

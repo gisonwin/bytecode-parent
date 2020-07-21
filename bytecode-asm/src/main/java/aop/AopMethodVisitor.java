@@ -7,17 +7,14 @@ import org.objectweb.asm.Type;
 import java.io.PrintStream;
 import java.time.LocalDateTime;
 
-/**
- * @author <a href="mailto:gisonwin@qq.com">GisonWin</a>
- */
-public class AddSecurityCheckMethodVisitor extends MethodVisitor {
-    public AddSecurityCheckMethodVisitor(MethodVisitor mv) {
+public class AopMethodVisitor extends MethodVisitor {
+    public AopMethodVisitor(MethodVisitor mv) {
         super(Opcodes.ASM8, mv);
     }
 
     //进入方法之后 立即执行的语句,这部分内容的修改在加载源方法字节码之前.
     public void visitCode() {
-        visitMethodInsn(Opcodes.INVOKESTATIC, Generator.class.getName().replace(".", "/")/*"aop/Generator"*/, "check", "()V", false);
+        visitMethodInsn(Opcodes.INVOKESTATIC, Check.class.getName().replace(".", "/")/*"aop/Check"*/, "check", "()V", false);
     }
 
     //在该方法RETURN 前执行的方法.通过判断当前指令为RETURN时,表明即将执行return语句,此时插入的字节码内容.
