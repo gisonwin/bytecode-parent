@@ -1,9 +1,9 @@
 package treeapi;
 
-import jdk.internal.org.objectweb.asm.Type;
 import lombok.Cleanup;
 import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.Opcodes;
+import org.objectweb.asm.Type;
 import org.objectweb.asm.tree.ClassNode;
 import org.objectweb.asm.tree.FieldNode;
 import org.objectweb.asm.tree.MethodNode;
