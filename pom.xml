@@ -26,6 +26,8 @@
         <spring.cloud.version>Hoxton.SR5</spring.cloud.version>
     </properties>
 
+
+
     <dependencyManagement>
         <dependencies>
             <dependency>

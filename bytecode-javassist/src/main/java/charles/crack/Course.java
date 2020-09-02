@@ -1,3 +1,5 @@
+package charles.crack;
+
 import javassist.*;
 
 /**

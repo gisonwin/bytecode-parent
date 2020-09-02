@@ -1,3 +1,5 @@
+package charles.crack;
+
 import javassist.ClassPool;
 import javassist.CtClass;
 import javassist.CtMethod;
@@ -11,7 +13,7 @@ public class Test {
         ClassPool pool = ClassPool.getDefault();
         String classPath = Thread.currentThread().getContextClassLoader().getResource(".").getFile();
         pool.insertClassPath(classPath);
-        CtClass cc = pool.get("test.javassist.Hello");
+        CtClass cc = pool.get("test.javassist.charles.crack.Hello");
         CtMethod cm = cc.getDeclaredMethod("say");
         cm.insertBefore("{ System.out.println(\"insert a method before\");}");
         Class<?> clazz = cc.toClass();

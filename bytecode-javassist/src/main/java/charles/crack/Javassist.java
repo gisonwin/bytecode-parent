@@ -1,3 +1,5 @@
+package charles.crack;
+
 import javassist.ClassPool;
 import javassist.CtClass;
 import javassist.CtConstructor;
