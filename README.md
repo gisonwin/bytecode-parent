@@ -4,3 +4,6 @@
 - ASM的介绍API,及访问模式,职责链模式,ASM实现简单AOP
 - javassistAPI介绍
 - 使用javassist破解charles(A Web Debugging Proxy)
+
+this charles.jar cracked ,only fits on version Charles 4.5.6.
+download it from here.
